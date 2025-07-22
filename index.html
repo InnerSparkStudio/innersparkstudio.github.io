@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InnerSpark Studio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --light-purple: #D9CFF0;
+      --light-yellow: #FFF7CC;
+      --light-beige: #FAF3E0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--light-beige);
+      color: #333;
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex flex-col justify-center items-center bg-[var(--light-purple)] text-center px-6">
+    <h1 class="text-5xl font-bold mb-4">InnerSpark Studio</h1>
+    <p class="text-xl italic mb-8">Where little sparks of magic are born...</p>
+    <a href="#about" class="bg-[var(--light-yellow)] text-gray-900 px-8 py-3 rounded-full text-lg font-semibold hover:bg-yellow-300 transition">
+      Discover More
+    </a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-6 max-w-4xl mx-auto text-center bg-[var(--light-beige)]">
+    <h2 class="text-4xl font-bold mb-8">Welcome</h2>
+    <p class="text-lg leading-relaxed max-w-3xl mx-auto">
+      At InnerSpark Studio, we believe every child carries a tiny spark of creativity, curiosity, and wonder.<br /><br />
+      Our mission is to ignite these sparks through education, creativity, and emotional growth — shaping confident and joyful learners.<br /><br />
+      Through storytelling, playful exploration, and meaningful learning experiences, we light up each child’s path with connection, imagination, and heart.<br /><br />
+      We believe that nurturing a child's mind and heart can light up their whole future.<br /><br />
+      Join us on this magical journey of learning and dreaming together!
+    </p>
+  </section>
+
+  <!-- Programs Section -->
+  <section id="programs" class="py-20 px-6 max-w-5xl mx-auto bg-[var(--light-yellow)]">
+    <h2 class="text-4xl font-bold text-center mb-12">Our Programs</h2>
+    <div class="grid gap-10 md:grid-cols-3">
+      <div class="bg-white rounded-xl shadow-lg p-8">
+        <h3 class="text-2xl font-semibold mb-3">Storytelling Adventures</h3>
+        <p>Interactive tales that spark imagination and build literacy with heart.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg p-8">
+        <h3 class="text-2xl font-semibold mb-3">Creative Workshops</h3>
+        <p>Hands-on sessions exploring art, play, music, and emotional expression.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg p-8">
+        <h3 class="text-2xl font-semibold mb-3">Mindful Learning</h3>
+        <p>Gentle practices that support focus, empathy, and inner growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center bg-[var(--light-purple)] text-gray-900">
+    <h2 class="text-4xl font-bold mb-8">Contact Us</h2>
+    <p class="text-lg mb-6">We'd love to hear from you! Email us at:</p>
+    <a href="mailto:hello@innersparkstudio.com" class="text-xl font-semibold underline hover:text-blue-700">
+      hello@innersparkstudio.com
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-6 text-center text-sm text-gray-600">
+    &copy; 2025 InnerSpark Studio. All rights reserved.
+  </footer>
+
+</body>
+</html>
