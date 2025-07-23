@@ -18,6 +18,37 @@
       color: #333;
       scroll-behavior: smooth;
     }
+    <header class="bg-white shadow-md fixed w-full z-50 top-0">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="#home" class="text-2xl font-bold text-purple-700">InnerSpark Studio</a>
+   <!-- Navigation links desktop -->
+      <nav class="hidden md:flex space-x-6 text-sm font-medium md:ml-6">
+        <a href="#about" class="hover:text-purple-600">Welcome</a>
+        <a href="#who-we-serve" class="hover:text-purple-600">Who We Serve</a>
+        <a href="#programs" class="hover:text-purple-600">Programs</a>
+        <a href="#explore-books" class="hover:text-purple-600">Explore Our Books</a>
+        <a href="webinars.html" class="hover:text-purple-600">Webinars</a>
+        <a href="#gallery" class="hover:text-purple-600">Gallery</a>
+        <a href="hiring.html" class="hover:text-purple-600">Join Our Team</a>
+        <a href="#contact" class="hover:text-purple-600">Contact</a>
+      </nav>
+    <button class="md:hidden text-purple-700 focus:outline-none" id="mobile-menu-button">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+  <div class="md:hidden hidden px-4 pb-4 space-y-2" id="mobile-menu">
+    <a href="#home" class="block hover:text-purple-600">Home</a>
+    <a href="#about" class="block hover:text-purple-600">About</a>
+    <a href="#who-we-serve" class="hover:text-purple-500">Who We Serve</a>
+    <a href="#explore-books" class="hover:text-purple-500">Explore Our Books</a>
+    <a href="#programs" class="block hover:text-purple-600">Programs</a>
+    <a href="#workshops" class="block hover:text-purple-600">Workshops</a>
+    <a href="#gallery" class="block hover:text-purple-600">Gallery</a>
+    <a href="#contact" class="block hover:text-purple-600">Contact</a>
+  </div>
+</header>
     /* Fade-in scroll */
     .fade-in {
       opacity: 0;
@@ -28,6 +59,7 @@
       opacity: 1;
       transform: translateY(0);
     }
+
     /* Navigation hover glow */
     nav a {
       position: relative;
@@ -50,6 +82,7 @@
       color: #7c3aed; /* Darker purple */
       text-shadow: 0 0 8px #c4b5fd;
     }
+
     /* Button press effect */
     a.button-press {
       transition: transform 0.1s ease;
@@ -57,37 +90,22 @@
     a.button-press:active {
       transform: scale(0.95);
     }
+
     /* Search bar focus glow */
     input[type="text"]:focus {
       outline: none;
       border-color: #9f7aea;
       box-shadow: 0 0 5px #c4b5fd;
     }
+
     /* Responsive nav hamburger */
     @media (max-width: 767px) {
-      nav.md\\:flex {
+      nav, .search-container {
         display: none;
       }
-    }
-    /* Animations */
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
+      .hamburger {
+        display: block;
       }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .animate-fade-in-up {
-      animation: fadeInUp 1s ease forwards;
-    }
-    .delay-200 {
-      animation-delay: 0.2s;
-    }
-    .delay-400 {
-      animation-delay: 0.4s;
     }
   </style>
 </head>
@@ -95,112 +113,108 @@
 
   <!-- Navigation Bar -->
   <header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 flex-wrap">
-      <!-- Logo -->
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
       <div class="flex items-center space-x-3">
         <img src="logo.webp" alt="InnerSpark Studio Logo" class="w-10 h-10 rounded-full" />
         <h1 class="text-xl font-bold text-purple-700 sparkle">InnerSpark Studio</h1>
       </div>
-
-      <!-- Search bar (always visible) -->
-      <div class="w-full md:w-auto mt-4 md:mt-0">
-        <input
-          type="text"
-          placeholder="Search..."
-          class="w-full md:w-64 px-3 py-1 rounded border border-gray-300 focus:outline-none focus:border-purple-500 focus:shadow-md"
-        />
-      </div>
-
-      <!-- Navigation links desktop -->
-      <nav class="hidden md:flex space-x-6 text-sm font-medium md:ml-6">
-        <a href="#about" class="hover:text-purple-600">Welcome</a>
-        <a href="#who-we-serve" class="hover:text-purple-600">Who We Serve</a>
-        <a href="#programs" class="hover:text-purple-600">Programs</a>
-        <a href="#explore-books" class="hover:text-purple-600">Explore Our Books</a>
-        <a href="webinars.html" class="hover:text-purple-600">Webinars</a>
-        <a href="#gallery" class="hover:text-purple-600">Gallery</a>
+      <nav class="hidden md:flex space-x-6 text-sm font-medium">
+        <a href="#about">Welcome</a>
+        <a href="#who-we-serve" class="hover:text-purple-500">Who We Serve</a>
+        <a href="#programs">Programs</a>
+        <a href="#explore-books" class="hover:text-purple-500">Explore Our Books</a>
+        <a href="webinars.html" class="hover:text-purple-500">Webinars</a>
+        <a href="#gallery">Gallery</a>
         <a href="hiring.html" class="hover:text-purple-600">Join Our Team</a>
-        <a href="#contact" class="hover:text-purple-600">Contact</a>
+        <a href="#contact">Contact</a>
       </nav>
-
-      <!-- Hamburger mobile -->
-      <button
-        id="mobile-menu-button"
-        class="md:hidden text-purple-700 focus:outline-none ml-4"
-        aria-label="Toggle mobile menu"
-        onclick="toggleMobileMenu()"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+      <div class="hidden md:block search-container">
+        <input type="text" placeholder="Search..." class="px-3 py-1 rounded border border-gray-300" />
+      </div>
+      <!-- Hamburger for mobile (placeholder) -->
+      <div class="hamburger md:hidden cursor-pointer text-purple-700 text-2xl select-none" onclick="toggleMobileMenu()">☰</div>
     </div>
-
-    <!-- Mobile menu -->
-    <nav
-      id="mobile-menu"
-      class="hidden md:hidden px-6 pb-4 space-y-3 bg-white border-t border-gray-200"
-    >
-      <a href="#about" class="block py-1 hover:text-purple-600">Welcome</a>
-      <a href="#who-we-serve" class="block py-1 hover:text-purple-600">Who We Serve</a>
-      <a href="#programs" class="block py-1 hover:text-purple-600">Programs</a>
-      <a href="#explore-books" class="block py-1 hover:text-purple-600">Explore Our Books</a>
-      <a href="webinars.html" class="block py-1 hover:text-purple-600">Webinars</a>
-      <a href="#gallery" class="block py-1 hover:text-purple-600">Gallery</a>
-      <a href="hiring.html" class="block py-1 hover:text-purple-600">Join Our Team</a>
-      <a href="#contact" class="block py-1 hover:text-purple-600">Contact</a>
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="hidden flex-col space-y-3 px-6 pb-4 md:hidden bg-white border-t border-gray-200">
+      <a href="#about" class="block py-1">Welcome</a>
+      <a href="#who-we-serve" class="hover:text-purple-500">Who We Serve</a>
+      <a href="#programs" class="block py-1">Programs</a>
+      <a href="#explore-books" class="hover:text-purple-500">Explore Our Books</a>
+      <a href="webinars.html" class="hover:text-purple-500">Webinars</a>
+      <a href="#gallery" class="block py-1">Gallery</a>
+      <a href="#hiring" class="block py-1">Hiring</a>
+      <a href="#contact" class="block py-1">Contact</a>
     </nav>
   </header>
+<!-- Hero Section -->
+<section id="hero" class="bg-gradient-to-br from-[var(--light-purple)] to-[var(--light-yellow)] py-24 px-6 text-center">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-5xl md:text-6xl font-extrabold text-purple-700 mb-6 opacity-0 animate-fade-in-up">
+      Welcome to Inner Spark Studio
+    </h1>
+    <p class="text-xl md:text-2xl text-gray-700 mb-8 opacity-0 animate-fade-in-up delay-200">
+      Nurturing children's creativity and literacy with magical stories, neuroscience, and the science of reading.
+    </p>
+    <a href="#who-we-serve" class="inline-block bg-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-purple-700 transition-opacity opacity-0 animate-fade-in-up delay-400 shadow-lg">
+      ✨ Who We Serve
+    </a>
+  </div>
+</section>
 
-  <!-- Hero Section -->
-  <section id="hero" class="bg-gradient-to-br from-[var(--light-purple)] to-[var(--light-yellow)] py-24 px-6 text-center">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-5xl md:text-6xl font-extrabold text-purple-700 mb-6 opacity-0 animate-fade-in-up">
-        Welcome to Inner Spark Studio
-      </h1>
-      <p class="text-xl md:text-2xl text-gray-700 mb-8 opacity-0 animate-fade-in-up delay-200">
-        Nurturing children's creativity and literacy with magical stories, neuroscience, and the science of reading.
-      </p>
-      <a href="#who-we-serve" class="inline-block bg-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-purple-700 transition-opacity opacity-0 animate-fade-in-up delay-400 shadow-lg">
-        ✨ Who We Serve
-      </a>
-    </div>
-  </section>
-
+<style>
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in-up {
+    animation: fadeInUp 1s ease forwards;
+  }
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+  .delay-400 {
+    animation-delay: 0.4s;
+  }
+</style>
+  
   <!-- Who We Serve Section -->
-  <section class="py-20 px-6 max-w-6xl mx-auto text-center">
-    <h2 class="text-4xl font-bold text-purple-700 mb-12">Who We Serve</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-
-      <!-- Children -->
-      <div class="bg-white rounded-3xl shadow-xl p-8 hover:shadow-purple-300 transition transform hover:-translate-y-2">
-        <div class="text-5xl mb-4">🧒</div>
-        <h3 class="text-2xl font-semibold mb-3 text-purple-800">Children</h3>
-        <p class="text-gray-700">Magical stories, vibrant characters, and hands-on tools to spark curiosity and early literacy.</p>
-      </div>
-
-      <!-- Educators -->
-      <div class="bg-white rounded-3xl shadow-xl p-8 hover:shadow-yellow-300 transition transform hover:-translate-y-2">
-        <div class="text-5xl mb-4">👩‍🏫</div>
-        <h3 class="text-2xl font-semibold mb-3 text-yellow-600">Educators</h3>
-        <p class="text-gray-700">Evidence-based guidebooks, workshops, and activities grounded in the science of reading and neuroscience.</p>
-      </div>
-
-      <!-- Schools -->
-      <div class="bg-white rounded-3xl shadow-xl p-8 hover:shadow-pink-300 transition transform hover:-translate-y-2">
-        <div class="text-5xl mb-4">🏫</div>
-        <h3 class="text-2xl font-semibold mb-3 text-pink-700">Schools</h3>
-        <p class="text-gray-700">Partnerships for literacy events, educator training, and child-centered creative experiences.</p>
-      </div>
-
+<section class="py-20 px-6 max-w-6xl mx-auto text-center">
+  <h2 class="text-4xl font-bold text-purple-700 mb-12">Who We Serve</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+    
+    <!-- Children -->
+    <div class="bg-white rounded-3xl shadow-xl p-8 hover:shadow-purple-300 transition transform hover:-translate-y-2">
+      <div class="text-5xl mb-4">🧒</div>
+      <h3 class="text-2xl font-semibold mb-3 text-purple-800">Children</h3>
+      <p class="text-gray-700">Magical stories, vibrant characters, and hands-on tools to spark curiosity and early literacy.</p>
     </div>
-  </section>
+
+    <!-- Educators -->
+    <div class="bg-white rounded-3xl shadow-xl p-8 hover:shadow-yellow-300 transition transform hover:-translate-y-2">
+      <div class="text-5xl mb-4">👩‍🏫</div>
+      <h3 class="text-2xl font-semibold mb-3 text-yellow-600">Educators</h3>
+      <p class="text-gray-700">Evidence-based guidebooks, workshops, and activities grounded in the science of reading and neuroscience.</p>
+    </div>
+
+    <!-- Schools -->
+    <div class="bg-white rounded-3xl shadow-xl p-8 hover:shadow-pink-300 transition transform hover:-translate-y-2">
+      <div class="text-5xl mb-4">🏫</div>
+      <h3 class="text-2xl font-semibold mb-3 text-pink-700">Schools</h3>
+      <p class="text-gray-700">Partnerships for literacy events, educator training, and child-centered creative experiences.</p>
+    </div>
+    
+  </div>
+</section>
+  
+<section id="who-we-serve" class="py-20 px-6 max-w-6xl mx-auto bg-[var(--light-beige)]">
+  <!-- content -->
+</section>
 
   <!-- About Section -->
   <section id="about" class="py-20 px-6 max-w-4xl mx-auto text-center bg-[var(--light-beige)] fade-in">
@@ -213,81 +227,80 @@
       Join us on this magical journey of learning and dreaming together!
     </p>
   </section>
-
+  
   <!-- Programs Section -->
-  <section id="programs" class="py-20 px-6 max-w-7xl mx-auto bg-gradient-to-br from-yellow-100 via-pink-50 to-purple-100">
-    <h2 class="text-4xl font-bold text-center mb-16 text-purple-700 sparkle">✨ Our Magical Programs ✨</h2>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
-      <!-- Program Card -->
-      <div class="bg-white rounded-3xl shadow-lg p-8 w-full max-w-sm text-center hover:shadow-purple-400 hover:scale-105 transition duration-300">
-        <div class="text-4xl mb-4 text-purple-500">📚</div>
-        <h3 class="text-xl font-semibold text-gray-800 mb-2">Guidebooks for Educators</h3>
-        <p class="text-gray-600">Evidence-based resources grounded in the science of reading and neuroscience to empower teachers.</p>
-      </div>
-
-      <div class="bg-white rounded-3xl shadow-lg p-8 w-full max-w-sm text-center hover:shadow-pink-400 hover:scale-105 transition duration-300">
-        <div class="text-4xl mb-4 text-pink-500">🧙‍♂️</div>
-        <h3 class="text-xl font-semibold text-gray-800 mb-2">Magical Stories for Children</h3>
-        <p class="text-gray-600">Engaging stories designed to ignite creativity while supporting early literacy development.</p>
-      </div>
-
-      <div class="bg-white rounded-3xl shadow-lg p-8 w-full max-w-sm text-center hover:shadow-yellow-400 hover:scale-105 transition duration-300">
-        <div class="text-4xl mb-4 text-yellow-500">🎨</div>
-        <h3 class="text-xl font-semibold text-gray-800 mb-2">Interactive Flashcards & Activities</h3>
-        <p class="text-gray-600">Phonics, vocabulary, and comprehension tools for hands-on learning and fun.</p>
-      </div>
-
-      <div class="bg-white rounded-3xl shadow-lg p-8 w-full max-w-sm text-center hover:shadow-indigo-400 hover:scale-105 transition duration-300">
-        <div class="text-4xl mb-4 text-indigo-500">🎤</div>
-        <h3 class="text-xl font-semibold text-gray-800 mb-2">Workshops & Webinars</h3>
-        <p class="text-gray-600">Live and recorded sessions to guide educators and parents in neuroscience-backed literacy methods.</p>
-      </div>
-
-      <div class="bg-white rounded-3xl shadow-lg p-8 w-full max-w-sm text-center hover:shadow-green-400 hover:scale-105 transition duration-300">
-        <div class="text-4xl mb-4 text-green-500">🏫</div>
-        <h3 class="text-xl font-semibold text-gray-800 mb-2">School Collaborations & Events</h3>
-        <p class="text-gray-600">Partnering with schools for training, storytelling sessions, and literacy-focused events.</p>
-      </div>
-
-      <div class="bg-white rounded-3xl shadow-xl p-10 max-w-sm hover:scale-105 hover:shadow-purple-400 transition transform cursor-pointer relative" style="margin-top: 3rem;">
-        <div class="mb-4 text-purple-600 text-4xl">🎤</div>
-        <h3 class="text-2xl font-semibold mb-3">Conferences & Events</h3>
-        <p>Hosting and moderating major conferences and workshops to inspire educators and promote neuroscience-based literacy across Morocco.</p>
-      </div>
+<section id="programs" class="py-20 px-6 max-w-7xl mx-auto bg-gradient-to-br from-yellow-100 via-pink-50 to-purple-100">
+  <h2 class="text-4xl font-bold text-center mb-16 text-purple-700 sparkle">✨ Our Magical Programs ✨</h2>
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
+    <!-- Program Card -->
+    <div class="bg-white rounded-3xl shadow-lg p-8 w-full max-w-sm text-center hover:shadow-purple-400 hover:scale-105 transition duration-300">
+      <div class="text-4xl mb-4 text-purple-500">📚</div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">Guidebooks for Educators</h3>
+      <p class="text-gray-600">Evidence-based resources grounded in the science of reading and neuroscience to empower teachers.</p>
     </div>
-  </section>
 
-  <!-- Explore Our Books Section -->
-  <section id="explore-books" class="py-20 px-6 max-w-6xl mx-auto bg-[var(--light-yellow)]">
-    <h2 class="text-4xl font-bold text-center mb-12">Explore Our Books</h2>
-
-    <div class="flex flex-wrap justify-center gap-8">
-      <!-- Kindergarten -->
-      <div class="rounded-xl p-6 shadow-md text-center flex flex-col gap-4 w-64 bg-white hover:shadow-xl transition duration-300">
-        <h3 class="text-2xl font-semibold text-gray-800">Kindergarten</h3>
-        <button class="bg-yellow-400 text-white px-4 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
-          Coming Soon
-        </button>
-      </div>
-
-      <!-- Lower Primary -->
-      <div class="rounded-xl p-6 shadow-md text-center flex flex-col gap-4 w-64 bg-white hover:shadow-xl transition duration-300">
-        <h3 class="text-2xl font-semibold text-gray-800">Lower Primary</h3>
-        <button class="bg-purple-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-purple-600 transition">
-          Coming Soon
-        </button>
-      </div>
-
-      <!-- Upper Primary -->
-      <div class="rounded-xl p-6 shadow-md text-center flex flex-col gap-4 w-64 bg-white hover:shadow-xl transition duration-300">
-        <h3 class="text-2xl font-semibold text-gray-800">Upper Primary</h3>
-        <button class="bg-gray-700 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-800 transition">
-          Coming Soon
-        </button>
-      </div>
+    <div class="bg-white rounded-3xl shadow-lg p-8 w-full max-w-sm text-center hover:shadow-pink-400 hover:scale-105 transition duration-300">
+      <div class="text-4xl mb-4 text-pink-500">🧙‍♂️</div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">Magical Stories for Children</h3>
+      <p class="text-gray-600">Engaging stories designed to ignite creativity while supporting early literacy development.</p>
     </div>
-  </section>
+
+    <div class="bg-white rounded-3xl shadow-lg p-8 w-full max-w-sm text-center hover:shadow-yellow-400 hover:scale-105 transition duration-300">
+      <div class="text-4xl mb-4 text-yellow-500">🎨</div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">Interactive Flashcards & Activities</h3>
+      <p class="text-gray-600">Phonics, vocabulary, and comprehension tools for hands-on learning and fun.</p>
+    </div>
+
+    <div class="bg-white rounded-3xl shadow-lg p-8 w-full max-w-sm text-center hover:shadow-indigo-400 hover:scale-105 transition duration-300">
+      <div class="text-4xl mb-4 text-indigo-500">🎤</div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">Workshops & Webinars</h3>
+      <p class="text-gray-600">Live and recorded sessions to guide educators and parents in neuroscience-backed literacy methods.</p>
+    </div>
+
+    <div class="bg-white rounded-3xl shadow-lg p-8 w-full max-w-sm text-center hover:shadow-green-400 hover:scale-105 transition duration-300">
+      <div class="text-4xl mb-4 text-green-500">🏫</div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">School Collaborations & Events</h3>
+      <p class="text-gray-600">Partnering with schools for training, storytelling sessions, and literacy-focused events.</p>
+    </div>
+
+    <div class="bg-white rounded-3xl shadow-xl p-10 max-w-sm hover:scale-105 hover:shadow-purple-400 transition transform cursor-pointer relative" style="margin-top: 3rem;">
+  <div class="mb-4 text-purple-500 text-4xl">🎤</div>
+  <h3 class="text-xl font-semibold text-gray-800 mb-2">Conferences & Events</h3>
+  <p>Hosting and moderating major conferences and workshops to inspire educators and promote neuroscience-based literacy across Morocco.</p>
+</div>
+  </div>
+</section>
+
+ <section id="explore-books" class="py-20 px-6 max-w-6xl mx-auto bg-[var(--light-yellow)]">
+  <h2 class="text-4xl font-bold text-center mb-12">Explore Our Books</h2>
+
+  <div class="flex flex-wrap justify-center gap-8">
+    <!-- Kindergarten -->
+    <div class="rounded-xl p-6 shadow-md text-center flex flex-col gap-4 w-64 bg-white hover:shadow-xl transition duration-300">
+      <h3 class="text-2xl font-semibold text-gray-800">Kindergarten</h3>
+      <button class="bg-yellow-400 text-white px-4 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
+        Coming Soon
+      </button>
+    </div>
+
+    <!-- Lower Primary -->
+    <div class="rounded-xl p-6 shadow-md text-center flex flex-col gap-4 w-64 bg-white hover:shadow-xl transition duration-300">
+      <h3 class="text-2xl font-semibold text-gray-800">Lower Primary</h3>
+      <button class="bg-purple-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-purple-600 transition">
+        Coming Soon
+      </button>
+    </div>
+
+    <!-- Upper Primary -->
+    <div class="rounded-xl p-6 shadow-md text-center flex flex-col gap-4 w-64 bg-white hover:shadow-xl transition duration-300">
+      <h3 class="text-2xl font-semibold text-gray-800">Upper Primary</h3>
+      <button class="bg-gray-700 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-800 transition">
+        Coming Soon
+      </button>
+    </div>
+  </div>
+</section>
 
   <!-- Placeholder Sections (To Fill Later) -->
   <section id="gallery" class="py-20 text-center bg-[var(--light-beige)] fade-in">
@@ -299,7 +312,7 @@
     <h2 class="text-3xl font-bold mb-4 sparkle">Webinars</h2>
     <p class="text-lg">Upcoming online workshops and special events — stay tuned!</p>
   </section>
-
+  
   <!-- Contact Section -->
   <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center bg-[var(--light-purple)] text-gray-900 fade-in">
     <h2 class="text-4xl font-bold mb-8 sparkle">Contact Us</h2>
@@ -310,52 +323,60 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-100 py-6 text-center text-sm text-gray-600">
-    <!-- Social Media Links -->
-    <div class="flex justify-center space-x-6 mb-4">
-      <a href="#" class="hover:text-purple-700" aria-label="Facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.505 0-1.797.715-1.797 1.763v2.312h3.59l-.467 3.622h-3.123V24h6.116c.73 0 1.324-.593 1.324-1.324V1.325C24 .593 23.406 0 22.675 0z" />
-        </svg>
-      </a>
-      <a href="#" class="hover:text-purple-700" aria-label="Twitter">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M23.954 4.569c-.885.392-1.83.656-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.95.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-2.72 0-4.924 2.204-4.924 4.924 0 .39.045.765.127 1.124C7.691 8.095 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.708.869 3.216 2.188 4.099-.807-.026-1.566-.247-2.229-.616v.062c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.317 0-.626-.03-.927-.086.627 1.956 2.444 3.379 4.6 3.419-1.68 1.318-3.809 2.105-6.102 2.105-.396 0-.787-.023-1.174-.068 2.179 1.397 4.768 2.213 7.548 2.213 9.054 0 14-7.496 14-13.986 0-.21-.005-.423-.014-.632.961-.694 1.8-1.562 2.46-2.549z" />
-        </svg>
-      </a>
-      <a href="#" class="hover:text-purple-700" aria-label="Instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M7.75 2h8.5C19.2 2 22 4.8 22 8.75v6.5c0 3.95-2.8 6.75-6.75 6.75h-8.5C4.8 22 2 19.2 2 15.25v-6.5C2 4.8 4.8 2 8.75 2zm0 2C5.6 4 4 5.6 4 8.75v6.5C4 17.4 5.6 19 8.75 19h6.5c3.15 0 4.75-1.6 4.75-4.75v-6.5C20 5.6 18.4 4 15.25 4h-6.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm4.5-3a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z" />
-        </svg>
-      </a>
-    </div>
-    <p>© 2025 InnerSpark Studio. All rights reserved.</p>
-  </footer>
+<footer class="bg-gray-100 py-6 text-center text-sm text-gray-600">
+  <!-- Social Media Links -->
+  <div class="flex justify-center space-x-6 mb-4">
+    <a href="https://www.facebook.com/share/16scVrvyor/" target="_blank" aria-label="Facebook" class="hover:opacity-80 transition">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" class="w-6 h-6">
+    </a>
+    <a href="https://www.instagram.com/inner_sparkstudio?igsh=MTQzNm1uaGk4bW5idQ==" target="_blank" aria-label="Instagram" class="hover:opacity-80 transition">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" class="w-6 h-6">
+    </a>
+    <a href="https://www.linkedin.com/company/innersparkstudio/" target="_blank" aria-label="LinkedIn" class="hover:opacity-80 transition">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" class="w-6 h-6">
+    </a>
+  </div>
+  
+  &copy; 2025 InnerSpark Studio. All rights reserved.
+</footer>
 
-  <!-- Scripts -->
+<script>
+  // Scroll fade-in logic
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOptions = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -50px 0px"
+  };
+  const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      appearOnScroll.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+
+  // Mobile menu toggle
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu.classList.contains('hidden')) {
+      menu.classList.remove('hidden');
+    } else {
+      menu.classList.add('hidden');
+    }
+  }
+</script>
   <script>
-    // Mobile menu toggle
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
-    }
+  const toggleBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
 
-    // Fade-in on scroll
-    function onScrollFadeIn() {
-      const elements = document.querySelectorAll('.fade-in');
-      const windowBottom = window.innerHeight + window.scrollY;
-
-      elements.forEach((el) => {
-        const elementTop = el.offsetTop + 100; // small offset
-        if (windowBottom > elementTop) {
-          el.classList.add('visible');
-        }
-      });
-    }
-
-    window.addEventListener('scroll', onScrollFadeIn);
-    window.addEventListener('load', onScrollFadeIn);
-  </script>
-
+  toggleBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>
+  
 </body>
 </html>
