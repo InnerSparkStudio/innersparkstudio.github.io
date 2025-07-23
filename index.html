@@ -18,6 +18,34 @@
       color: #333;
       scroll-behavior: smooth;
     }
+    <header class="bg-white shadow-md fixed w-full z-50 top-0">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="#home" class="text-2xl font-bold text-purple-700">InnerSpark Studio</a>
+    <nav class="hidden md:flex space-x-6 text-gray-700 font-semibold">
+      <a href="#home" class="hover:text-purple-600 transition">Home</a>
+      <a href="#about" class="hover:text-purple-600 transition">About</a>
+      <a href="#explore-books" class="hover:text-purple-600 transition">Explore Our Books</a>
+      <a href="#programs" class="hover:text-purple-600 transition">Programs</a>
+      <a href="#workshops" class="hover:text-purple-600 transition">Workshops</a>
+      <a href="#gallery" class="hover:text-purple-600 transition">Gallery</a>
+      <a href="#contact" class="hover:text-purple-600 transition">Contact</a>
+    </nav>
+    <button class="md:hidden text-purple-700 focus:outline-none" id="mobile-menu-button">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+  <div class="md:hidden hidden px-4 pb-4 space-y-2" id="mobile-menu">
+    <a href="#home" class="block hover:text-purple-600">Home</a>
+    <a href="#about" class="block hover:text-purple-600">About</a>
+    <a href="#explore-books" class="block hover:text-purple-600">Explore Our Books</a>
+    <a href="#programs" class="block hover:text-purple-600">Programs</a>
+    <a href="#workshops" class="block hover:text-purple-600">Workshops</a>
+    <a href="#gallery" class="block hover:text-purple-600">Gallery</a>
+    <a href="#contact" class="block hover:text-purple-600">Contact</a>
+  </div>
+</header>
     /* Fade-in scroll */
     .fade-in {
       opacity: 0;
