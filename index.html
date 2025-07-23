@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,6 +21,28 @@
   </style>
 </head>
 <body class="antialiased">
+
+  <!-- Navigation Bar -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <div class="flex items-center space-x-3">
+        <img src="logo.png" alt="InnerSpark Logo" class="w-10 h-10 rounded-full">
+        <h1 class="text-xl font-bold text-purple-700">InnerSpark Studio</h1>
+      </div>
+      <nav class="hidden md:flex space-x-6 text-sm font-medium">
+        <a href="#about" class="hover:text-purple-500">Welcome</a>
+        <a href="#programs" class="hover:text-purple-500">Programs</a>
+        <a href="#contact" class="hover:text-purple-500">Contact</a>
+        <a href="#shop" class="hover:text-purple-500">Buy Books</a>
+        <a href="#gallery" class="hover:text-purple-500">Gallery</a>
+        <a href="#webinars" class="hover:text-purple-500">Webinars</a>
+        <a href="#hiring" class="hover:text-purple-500">Hiring</a>
+      </nav>
+      <div class="hidden md:block">
+        <input type="text" placeholder="Search..." class="px-3 py-1 rounded border border-gray-300">
+      </div>
+    </div>
+  </header>
 
   <!-- Hero Section -->
   <section class="min-h-screen flex flex-col justify-center items-center bg-[var(--light-purple)] text-center px-6">
@@ -60,6 +82,27 @@
         <p>Gentle practices that support focus, empathy, and inner growth.</p>
       </div>
     </div>
+  </section>
+
+  <!-- Placeholder Sections (To Fill Later) -->
+  <section id="shop" class="py-20 text-center bg-[var(--light-purple)]">
+    <h2 class="text-3xl font-bold mb-4">Buy Books</h2>
+    <p class="text-lg">Coming soon: Magical stories and guidebooks for every age.</p>
+  </section>
+
+  <section id="gallery" class="py-20 text-center bg-[var(--light-beige)]">
+    <h2 class="text-3xl font-bold mb-4">Gallery</h2>
+    <p class="text-lg">Sneak peeks into our events, books, and magical creations.</p>
+  </section>
+
+  <section id="webinars" class="py-20 text-center bg-[var(--light-yellow)]">
+    <h2 class="text-3xl font-bold mb-4">Webinars</h2>
+    <p class="text-lg">Upcoming online workshops and special events — stay tuned!</p>
+  </section>
+
+  <section id="hiring" class="py-20 text-center bg-[var(--light-purple)]">
+    <h2 class="text-3xl font-bold mb-4">We're Hiring</h2>
+    <p class="text-lg">Passionate about education? Join our growing dream team.</p>
   </section>
 
   <!-- Contact Section -->
