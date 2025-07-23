@@ -18,6 +18,86 @@
       color: #333;
       scroll-behavior: smooth;
     }
+
+    /* Sparkle animation */
+    @keyframes sparkle {
+      0%, 100% { opacity: 0.2; transform: translateY(0) scale(1); }
+      50% { opacity: 1; transform: translateY(-5px) scale(1.1); }
+    }
+    .sparkle {
+      position: relative;
+      animation: sparkle 3s infinite ease-in-out;
+    }
+    .sparkle::before {
+      content: '✨';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.2em;
+      opacity: 0.6;
+      animation: sparkle 3s infinite ease-in-out;
+      pointer-events: none;
+    }
+
+    /* Fade-in scroll */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Navigation hover glow */
+    nav a {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #9f7aea; /* Light purple */
+      transition: width 0.3s ease;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    nav a:hover {
+      color: #7c3aed; /* Darker purple */
+      text-shadow: 0 0 8px #c4b5fd;
+    }
+
+    /* Button press effect */
+    a.button-press {
+      transition: transform 0.1s ease;
+    }
+    a.button-press:active {
+      transform: scale(0.95);
+    }
+
+    /* Search bar focus glow */
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #9f7aea;
+      box-shadow: 0 0 5px #c4b5fd;
+    }
+
+    /* Responsive nav hamburger */
+    @media (max-width: 767px) {
+      nav, .search-container {
+        display: none;
+      }
+      .hamburger {
+        display: block;
+      }
+    }
   </style>
 </head>
 <body class="antialiased">
@@ -26,36 +106,48 @@
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
       <div class="flex items-center space-x-3">
-      <img src="logo.webp" alt="InnerSpark Studio Logo" class="w-10 h-10 rounded-full" />
-        <h1 class="text-xl font-bold text-purple-700">InnerSpark Studio</h1>
+        <img src="logo.webp" alt="InnerSpark Studio Logo" class="w-10 h-10 rounded-full" />
+        <h1 class="text-xl font-bold text-purple-700 sparkle">InnerSpark Studio</h1>
       </div>
       <nav class="hidden md:flex space-x-6 text-sm font-medium">
-        <a href="#about" class="hover:text-purple-500">Welcome</a>
-        <a href="#programs" class="hover:text-purple-500">Programs</a>
-        <a href="#contact" class="hover:text-purple-500">Contact</a>
-        <a href="#shop" class="hover:text-purple-500">Buy Books</a>
-        <a href="#gallery" class="hover:text-purple-500">Gallery</a>
-        <a href="#webinars" class="hover:text-purple-500">Webinars</a>
-        <a href="#hiring" class="hover:text-purple-500">Hiring</a>
+        <a href="#about">Welcome</a>
+        <a href="#programs">Programs</a>
+        <a href="#books">Books</a>
+        <a href="#webinars">Webinars</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#hiring">Hiring</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <div class="hidden md:block">
-        <input type="text" placeholder="Search..." class="px-3 py-1 rounded border border-gray-300">
+      <div class="hidden md:block search-container">
+        <input type="text" placeholder="Search..." class="px-3 py-1 rounded border border-gray-300" />
       </div>
+      <!-- Hamburger for mobile (placeholder) -->
+      <div class="hamburger md:hidden cursor-pointer text-purple-700 text-2xl select-none" onclick="toggleMobileMenu()">☰</div>
     </div>
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="hidden flex-col space-y-3 px-6 pb-4 md:hidden bg-white border-t border-gray-200">
+      <a href="#about" class="block py-1">Welcome</a>
+      <a href="#programs" class="block py-1">Programs</a>
+      <a href="#books" class="block py-1">Books</a>
+      <a href="#webinars" class="block py-1">Webinars</a>
+      <a href="#gallery" class="block py-1">Gallery</a>
+      <a href="#hiring" class="block py-1">Hiring</a>
+      <a href="#contact" class="block py-1">Contact</a>
+    </nav>
   </header>
 
   <!-- Hero Section -->
-  <section class="min-h-screen flex flex-col justify-center items-center bg-[var(--light-purple)] text-center px-6">
-    <h1 class="text-5xl font-bold mb-4">InnerSpark Studio</h1>
-    <p class="text-xl italic mb-8">Where little sparks of magic are born...</p>
-    <a href="#about" class="bg-[var(--light-yellow)] text-gray-900 px-8 py-3 rounded-full text-lg font-semibold hover:bg-yellow-300 transition">
+  <section class="min-h-screen flex flex-col justify-center items-center bg-[var(--light-purple)] text-center px-6 fade-in">
+    <h1 class="text-5xl font-bold mb-4 sparkle">InnerSpark Studio</h1>
+    <p class="text-xl italic mb-8 sparkle">Where little sparks of magic are born...</p>
+    <a href="#about" class="button-press sparkle bg-[var(--light-yellow)] text-gray-900 px-8 py-3 rounded-full text-lg font-semibold hover:bg-yellow-300 transition">
       Discover More
     </a>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-20 px-6 max-w-4xl mx-auto text-center bg-[var(--light-beige)]">
-    <h2 class="text-4xl font-bold mb-8">Welcome</h2>
+  <section id="about" class="py-20 px-6 max-w-4xl mx-auto text-center bg-[var(--light-beige)] fade-in">
+    <h2 class="text-4xl font-bold mb-8 sparkle">Welcome</h2>
     <p class="text-lg leading-relaxed max-w-3xl mx-auto">
       At InnerSpark Studio, we believe every child carries a tiny spark of creativity, curiosity, and wonder.<br /><br />
       Our mission is to ignite these sparks through education, creativity, and emotional growth — shaping confident and joyful learners.<br /><br />
@@ -66,58 +158,94 @@
   </section>
 
   <!-- Programs Section -->
- <section id="programs" class="py-20 px-6 max-w-5xl mx-auto bg-[var(--light-yellow)]">
-  <h2 class="text-4xl font-bold text-center mb-12">Our Programs</h2>
-  <div class="grid gap-10 md:grid-cols-3">
-    <div class="bg-white rounded-xl shadow-lg p-8">
-      <h3 class="text-2xl font-semibold mb-3">Guidebooks for Educators</h3>
-      <p>Evidence-based resources grounded in the science of reading and neuroscience to empower teachers.</p>
+  <section id="programs" class="py-20 px-6 max-w-5xl mx-auto bg-[var(--light-yellow)] fade-in">
+    <h2 class="text-4xl font-bold text-center mb-12 sparkle">Our Programs</h2>
+    <div class="grid gap-10 md:grid-cols-3">
+      <div class="bg-white rounded-xl shadow-lg p-8 button-press hover:shadow-xl transition">
+        <h3 class="text-2xl font-semibold mb-3">Guidebooks for Educators</h3>
+        <p>Evidence-based resources grounded in the science of reading and neuroscience to empower teachers.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg p-8 button-press hover:shadow-xl transition">
+        <h3 class="text-2xl font-semibold mb-3">Magical Stories for Children</h3>
+        <p>Engaging stories designed to ignite creativity while supporting early literacy development.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg p-8 button-press hover:shadow-xl transition">
+        <h3 class="text-2xl font-semibold mb-3">Interactive Flashcards & Activities</h3>
+        <p>Phonics, vocabulary, and comprehension tools for hands-on learning and fun.</p>
+      </div>
     </div>
-    <div class="bg-white rounded-xl shadow-lg p-8">
-      <h3 class="text-2xl font-semibold mb-3">Magical Stories for Children</h3>
-      <p>Engaging stories designed to ignite creativity while supporting early literacy development.</p>
+    <div class="grid gap-10 md:grid-cols-2 mt-12">
+      <div class="bg-white rounded-xl shadow-lg p-8 button-press hover:shadow-xl transition">
+        <h3 class="text-2xl font-semibold mb-3">Workshops & Webinars</h3>
+        <p>Live and recorded sessions to guide educators and parents in neuroscience-backed literacy teaching methods.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg p-8 button-press hover:shadow-xl transition">
+        <h3 class="text-2xl font-semibold mb-3">School Collaborations & Events</h3>
+        <p>Partnering with schools for training, storytelling sessions, and literacy-focused events.</p>
+      </div>
     </div>
-    <div class="bg-white rounded-xl shadow-lg p-8">
-      <h3 class="text-2xl font-semibold mb-3">Interactive Flashcards & Activities</h3>
-      <p>Phonics, vocabulary, and comprehension tools for hands-on learning and fun.</p>
-    </div>
-  </div>
-  <div class="grid gap-10 md:grid-cols-2 mt-12">
-    <div class="bg-white rounded-xl shadow-lg p-8">
-      <h3 class="text-2xl font-semibold mb-3">Workshops & Webinars</h3>
-      <p>Live and recorded sessions to guide educators and parents in neuroscience-backed literacy teaching methods.</p>
-    </div>
-    <div class="bg-white rounded-xl shadow-lg p-8">
-      <h3 class="text-2xl font-semibold mb-3">School Collaborations & Events</h3>
-      <p>Partnering with schools for training, storytelling sessions, and literacy-focused events.</p>
-    </div>
-  </div>
-</section>
-
-  <!-- Placeholder Sections (To Fill Later) -->
-  <section id="shop" class="py-20 text-center bg-[var(--light-purple)]">
-    <h2 class="text-3xl font-bold mb-4">Buy Books</h2>
-    <p class="text-lg">Coming soon: Magical stories and guidebooks for every age.</p>
   </section>
 
-  <section id="gallery" class="py-20 text-center bg-[var(--light-beige)]">
-    <h2 class="text-3xl font-bold mb-4">Gallery</h2>
+  <!-- Books Section with Levels -->
+  <section id="books" class="py-20 px-6 max-w-6xl mx-auto bg-[var(--light-beige)] fade-in">
+    <h2 class="text-4xl font-bold text-center mb-12 sparkle">Books by Level</h2>
+    <div class="grid gap-10 md:grid-cols-3">
+
+      <!-- Kindergarten -->
+      <div class="bg-white rounded-xl shadow-lg p-8 button-press hover:shadow-xl transition">
+        <h3 class="text-2xl font-semibold mb-4 text-purple-700">Kindergarten (Ages 3–5)</h3>
+        <p class="mb-6">Early phonics, letter recognition, and playful stories to build foundational skills.</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-700">
+          <li><strong>The Alphabet Adventure</strong> — Fun letter sounds and bright illustrations.</li>
+          <li><strong>Colors & Shapes Magic</strong> — Interactive story with simple games.</li>
+          <li><strong>First Words Flashcards</strong> — Engaging vocabulary builders.</li>
+        </ul>
+      </div>
+
+      <!-- Lower Primary -->
+      <div class="bg-white rounded-xl shadow-lg p-8 button-press hover:shadow-xl transition">
+        <h3 class="text-2xl font-semibold mb-4 text-purple-700">Lower Primary (Ages 6–8)</h3>
+        <p class="mb-6">Blending, decoding, and early reading fluency with creative stories.</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-700">
+          <li><strong>Magical Word Builders</strong> — Phonics and decoding practice through stories.</li>
+          <li><strong>Reading Sparks</strong> — Short chapter books with comprehension questions.</li>
+          <li><strong>Vocabulary Voyage</strong> — Fun themed vocabulary flashcards.</li>
+        </ul>
+      </div>
+
+      <!-- Upper Primary -->
+      <div class="bg-white rounded-xl shadow-lg p-8 button-press hover:shadow-xl transition">
+        <h3 class="text-2xl font-semibold mb-4 text-purple-700">Upper Primary (Ages 9–11)</h3>
+        <p class="mb-6">Vocabulary building, comprehension, and creative writing inspiration.</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-700">
+          <li><strong>Storyweaver’s Journal</strong> — Creative writing prompts and exercises.</li>
+          <li><strong>Advanced Reading Sparks</strong> — Longer stories to challenge comprehension.</li>
+          <li><strong>Word Wizards</strong> — Advanced vocabulary flashcards.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Placeholder Sections (To Fill Later) -->
+  <section id="gallery" class="py-20 text-center bg-[var(--light-beige)] fade-in">
+    <h2 class="text-3xl font-bold mb-4 sparkle">Gallery</h2>
     <p class="text-lg">Sneak peeks into our events, books, and magical creations.</p>
   </section>
 
-  <section id="webinars" class="py-20 text-center bg-[var(--light-yellow)]">
-    <h2 class="text-3xl font-bold mb-4">Webinars</h2>
+  <section id="webinars" class="py-20 text-center bg-[var(--light-yellow)] fade-in">
+    <h2 class="text-3xl font-bold mb-4 sparkle">Webinars</h2>
     <p class="text-lg">Upcoming online workshops and special events — stay tuned!</p>
   </section>
 
-  <section id="hiring" class="py-20 text-center bg-[var(--light-purple)]">
-    <h2 class="text-3xl font-bold mb-4">We're Hiring</h2>
+  <section id="hiring" class="py-20 text-center bg-[var(--light-purple)] fade-in">
+    <h2 class="text-3xl font-bold mb-4 sparkle">We're Hiring</h2>
     <p class="text-lg">Passionate about education? Join our growing dream team.</p>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center bg-[var(--light-purple)] text-gray-900">
-    <h2 class="text-4xl font-bold mb-8">Contact Us</h2>
+  <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center bg-[var(--light-purple)] text-gray-900 fade-in">
+    <h2 class="text-4xl font-bold mb-8 sparkle">Contact Us</h2>
     <p class="text-lg mb-6">We'd love to hear from you! Email us at:</p>
     <a href="mailto:hello@innersparkstudio.com" class="text-xl font-semibold underline hover:text-blue-700">
       hello@innersparkstudio.com
@@ -128,6 +256,36 @@
   <footer class="bg-gray-100 py-6 text-center text-sm text-gray-600">
     &copy; 2025 InnerSpark Studio. All rights reserved.
   </footer>
+
+<script>
+  // Scroll fade-in logic
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOptions = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -50px 0px"
+  };
+  const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      appearOnScroll.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+
+  // Mobile menu toggle
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu.classList.contains('hidden')) {
+      menu.classList.remove('hidden');
+    } else {
+      menu.classList.add('hidden');
+    }
+  }
+</script>
 
 </body>
 </html>
