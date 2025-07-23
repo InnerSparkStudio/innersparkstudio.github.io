@@ -92,6 +92,13 @@
   <footer class="bg-gray-100 py-6 text-center text-sm text-gray-600 mt-12">
     &copy; 2025 InnerSpark Studio. All rights reserved.
   </footer>
+<script>
+  const menuBtn = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
 
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
 </body>
 </html>
