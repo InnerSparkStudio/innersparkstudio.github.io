@@ -379,24 +379,30 @@
     appearOnScroll.observe(fader);
   });
 
-  // Mobile menu toggle
-  function toggleMobileMenu() {
-    const menu = document.getElementById('mobile-menu');
-    if (menu.classList.contains('hidden')) {
-      menu.classList.remove('hidden');
-    } else {
-      menu.classList.add('hidden');
-    }
-  }
-</script>
+  <!-- Scripts -->
   <script>
-  const toggleBtn = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
 
-  toggleBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
-  });
-</script>
-  
+    // Fade-in on scroll
+    function onScrollFadeIn() {
+      const elements = document.querySelectorAll('.fade-in');
+      const windowBottom = window.innerHeight + window.scrollY;
+
+      elements.forEach((el) => {
+        const elementTop = el.offsetTop + 100; // small offset
+        if (windowBottom > elementTop) {
+          el.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', onScrollFadeIn);
+    window.addEventListener('load', onScrollFadeIn);
+  </script>
+
 </body>
 </html>
