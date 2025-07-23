@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join Our Team | InnerSpark Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --light-purple: #D9CFF0;
+      --light-yellow: #FFF7CC;
+      --light-beige: #FAF3E0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--light-beige);
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    .fade-in {
+      animation: fadeInUp 1s ease-in-out;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow-md py-4 px-6 flex justify-between items-center sticky top-0 z-50">
+    <a href="index.html" class="text-2xl font-bold text-purple-800 hover:text-purple-600">InnerSpark Studio</a>
+    <nav class="space-x-6 text-sm text-gray-700 hidden md:flex">
+      <a href="index.html#about" class="hover:text-purple-600">Welcome</a>
+      <a href="index.html#programs" class="hover:text-purple-600">Programs</a>
+      <a href="index.html#shop" class="hover:text-purple-600">Buy Books</a>
+      <a href="index.html#gallery" class="hover:text-purple-600">Gallery</a>
+      <a href="index.html#webinars" class="hover:text-purple-600">Webinars</a>
+      <a href="hiring.html" class="font-semibold text-purple-800 underline">Join Our Team</a>
+      <a href="index.html#contact" class="hover:text-purple-600">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hiring Section -->
+  <section class="py-20 px-6 max-w-6xl mx-auto bg-[var(--light-purple)] text-gray-900 fade-in">
+    <h2 class="text-5xl font-bold mb-8 text-center text-purple-900 sparkle">Join Our Team</h2>
+    <p class="text-lg max-w-3xl mx-auto mb-10 text-center">
+      Passionate about education, neuroscience, and creativity? Help shape the future of joyful learning with us.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition duration-300 cursor-pointer">
+        <h3 class="text-2xl font-semibold mb-2 text-purple-800">Educational Content Developer</h3>
+        <p>Create evidence-based guidebooks and lesson plans grounded in neuroscience and literacy science.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition duration-300 cursor-pointer">
+        <h3 class="text-2xl font-semibold mb-2 text-purple-800">Children’s Story Writer & Illustrator</h3>
+        <p>Craft magical stories and captivating illustrations to engage young readers.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition duration-300 cursor-pointer">
+        <h3 class="text-2xl font-semibold mb-2 text-purple-800">Workshop Facilitator / Trainer</h3>
+        <p>Lead interactive workshops and webinars for teachers and parents based on neuroscience-backed methods.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition duration-300 cursor-pointer">
+        <h3 class="text-2xl font-semibold mb-2 text-purple-800">Community & School Partnership Coordinator</h3>
+        <p>Build partnerships with schools and community organizations to deliver literacy-focused events.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition duration-300 cursor-pointer">
+        <h3 class="text-2xl font-semibold mb-2 text-purple-800">Marketing & Communications Specialist</h3>
+        <p>Help spread our mission through engaging content, social media, and event promotion.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition duration-300 cursor-pointer">
+        <h3 class="text-2xl font-semibold mb-2 text-purple-800">Web & Multimedia Designer</h3>
+        <p>Design and maintain our website and digital media to create engaging learning experiences.</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="mailto:hello@innersparkstudio.com" class="bg-purple-700 text-white py-3 px-6 rounded-full text-lg hover:bg-purple-800 transition">
+        Apply Now
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-6 text-center text-sm text-gray-600 mt-12">
+    &copy; 2025 InnerSpark Studio. All rights reserved.
+  </footer>
+
+</body>
+</html>
