@@ -202,33 +202,58 @@
 </section>
 
 <section id="explore-books" class="py-20 px-6 max-w-6xl mx-auto bg-[var(--light-yellow)]">
-  <h2 class="text-4xl font-bold text-center mb-12">Explore Our Books</h2>
-  
+  <h2 class="text-4xl font-bold text-center mb-12 sparkle">Explore Our Books</h2>
+
   <div class="flex flex-wrap justify-center gap-8">
-    <!-- Kindergarten -->
-    <div class="bg-[var(--light-yellow)] rounded-xl p-6 shadow-lg text-center flex flex-col gap-4 w-64">
+    <!-- Card Template -->
+    <div class="book-card bg-[var(--light-yellow)] group">
       <h3 class="text-2xl font-semibold text-gray-800">Kindergarten</h3>
-      <button class="bg-yellow-400 text-white px-4 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
+      <button class="book-btn bg-yellow-400 hover:bg-yellow-500">
         Coming Soon
       </button>
     </div>
 
-    <!-- Lower Primary -->
-    <div class="bg-[var(--light-purple)] rounded-xl p-6 shadow-lg text-center flex flex-col gap-4 w-64">
+    <div class="book-card bg-[var(--light-purple)] group">
       <h3 class="text-2xl font-semibold text-gray-800">Lower Primary</h3>
-      <button class="bg-purple-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-purple-600 transition">
+      <button class="book-btn bg-purple-500 hover:bg-purple-600">
         Coming Soon
       </button>
     </div>
 
-    <!-- Upper Primary -->
-    <div class="bg-[var(--light-beige)] rounded-xl p-6 shadow-lg text-center flex flex-col gap-4 w-64">
+    <div class="book-card bg-[var(--light-beige)] group">
       <h3 class="text-2xl font-semibold text-gray-800">Upper Primary</h3>
-      <button class="bg-gray-700 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-800 transition">
+      <button class="book-btn bg-gray-700 hover:bg-gray-800">
         Coming Soon
       </button>
     </div>
   </div>
+
+  <!-- Optional: Sparkle animation -->
+  <style>
+    .book-card {
+      @apply rounded-xl p-6 shadow-xl text-center flex flex-col gap-4 w-64 transition transform duration-300;
+    }
+    .book-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+    .book-btn {
+      @apply text-white px-4 py-2 rounded-full font-semibold transition duration-300 active:scale-95;
+    }
+    /* Optional sparkle animation class if you want to apply it to title */
+    .sparkle {
+      background: linear-gradient(90deg, #facc15, #a78bfa, #fcd34d, #facc15);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 3s linear infinite;
+    }
+    @keyframes shine {
+      to {
+        background-position: -200% center;
+      }
+    }
+  </style>
 </section>
 
   <!-- Placeholder Sections (To Fill Later) -->
