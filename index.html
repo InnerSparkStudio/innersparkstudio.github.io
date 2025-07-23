@@ -201,26 +201,28 @@
   </div>
 </section>
 
-<section id="explore-books" class="py-20 px-6 max-w-6xl mx-auto bg-[var(--light-yellow)]">
+  <section id="explore-books" class="py-20 px-6 max-w-6xl mx-auto bg-[var(--light-yellow)]">
   <h2 class="text-4xl font-bold text-center mb-12 sparkle">Explore Our Books</h2>
 
   <div class="flex flex-wrap justify-center gap-8">
-    <!-- Card Template -->
-    <div class="book-card bg-[var(--light-yellow)] group">
+    <!-- Kindergarten -->
+    <div class="book-card bg-[var(--light-yellow)]">
       <h3 class="text-2xl font-semibold text-gray-800">Kindergarten</h3>
       <button class="book-btn bg-yellow-400 hover:bg-yellow-500">
         Coming Soon
       </button>
     </div>
 
-    <div class="book-card bg-[var(--light-purple)] group">
+    <!-- Lower Primary -->
+    <div class="book-card bg-[var(--light-purple)]">
       <h3 class="text-2xl font-semibold text-gray-800">Lower Primary</h3>
       <button class="book-btn bg-purple-500 hover:bg-purple-600">
         Coming Soon
       </button>
     </div>
 
-    <div class="book-card bg-[var(--light-beige)] group">
+    <!-- Upper Primary -->
+    <div class="book-card bg-[var(--light-beige)]">
       <h3 class="text-2xl font-semibold text-gray-800">Upper Primary</h3>
       <button class="book-btn bg-gray-700 hover:bg-gray-800">
         Coming Soon
@@ -228,27 +230,46 @@
     </div>
   </div>
 
-  <!-- Optional: Sparkle animation -->
   <style>
     .book-card {
-      @apply rounded-xl p-6 shadow-xl text-center flex flex-col gap-4 w-64 transition transform duration-300;
+      width: 16rem; /* w-64 */
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
     }
+
     .book-card:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(147, 51, 234, 0.3);
     }
+
     .book-btn {
-      @apply text-white px-4 py-2 rounded-full font-semibold transition duration-300 active:scale-95;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      transition: transform 0.2s ease, background-color 0.3s ease;
     }
-    /* Optional sparkle animation class if you want to apply it to title */
+
+    .book-btn:active {
+      transform: scale(0.95);
+    }
+
     .sparkle {
       background: linear-gradient(90deg, #facc15, #a78bfa, #fcd34d, #facc15);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: shine 3s linear infinite;
+      animation: sparkleMove 3s linear infinite;
     }
-    @keyframes shine {
+
+    @keyframes sparkleMove {
       to {
         background-position: -200% center;
       }
