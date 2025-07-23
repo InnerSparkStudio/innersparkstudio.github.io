@@ -201,80 +201,34 @@
   </div>
 </section>
 
-  <section id="explore-books" class="py-20 px-6 max-w-6xl mx-auto bg-[var(--light-yellow)]">
-  <h2 class="text-4xl font-bold text-center mb-12 sparkle">Explore Our Books</h2>
+ <section id="explore-books" class="py-20 px-6 max-w-6xl mx-auto bg-[var(--light-yellow)]">
+  <h2 class="text-4xl font-bold text-center mb-12">Explore Our Books</h2>
 
   <div class="flex flex-wrap justify-center gap-8">
     <!-- Kindergarten -->
-    <div class="book-card bg-[var(--light-yellow)]">
+    <div class="rounded-xl p-6 shadow-md text-center flex flex-col gap-4 w-64 bg-white hover:shadow-xl transition duration-300">
       <h3 class="text-2xl font-semibold text-gray-800">Kindergarten</h3>
-      <button class="book-btn bg-yellow-400 hover:bg-yellow-500">
+      <button class="bg-yellow-400 text-white px-4 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
         Coming Soon
       </button>
     </div>
 
     <!-- Lower Primary -->
-    <div class="book-card bg-[var(--light-purple)]">
+    <div class="rounded-xl p-6 shadow-md text-center flex flex-col gap-4 w-64 bg-white hover:shadow-xl transition duration-300">
       <h3 class="text-2xl font-semibold text-gray-800">Lower Primary</h3>
-      <button class="book-btn bg-purple-500 hover:bg-purple-600">
+      <button class="bg-purple-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-purple-600 transition">
         Coming Soon
       </button>
     </div>
 
     <!-- Upper Primary -->
-    <div class="book-card bg-[var(--light-beige)]">
+    <div class="rounded-xl p-6 shadow-md text-center flex flex-col gap-4 w-64 bg-white hover:shadow-xl transition duration-300">
       <h3 class="text-2xl font-semibold text-gray-800">Upper Primary</h3>
-      <button class="book-btn bg-gray-700 hover:bg-gray-800">
+      <button class="bg-gray-700 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-800 transition">
         Coming Soon
       </button>
     </div>
   </div>
-
-  <style>
-    .book-card {
-      width: 16rem; /* w-64 */
-      border-radius: 1rem;
-      padding: 1.5rem;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease-in-out;
-      cursor: pointer;
-    }
-
-    .book-card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 12px 30px rgba(147, 51, 234, 0.3);
-    }
-
-    .book-btn {
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 9999px;
-      font-weight: 600;
-      transition: transform 0.2s ease, background-color 0.3s ease;
-    }
-
-    .book-btn:active {
-      transform: scale(0.95);
-    }
-
-    .sparkle {
-      background: linear-gradient(90deg, #facc15, #a78bfa, #fcd34d, #facc15);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: sparkleMove 3s linear infinite;
-    }
-
-    @keyframes sparkleMove {
-      to {
-        background-position: -200% center;
-      }
-    }
-  </style>
 </section>
 
   <!-- Placeholder Sections (To Fill Later) -->
