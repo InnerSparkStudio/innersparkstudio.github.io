@@ -49,6 +49,23 @@
     </a>
   </section>
 
+  <a href="/webinar-registration.html" class="bg-purple-700 hover:bg-purple-800 text-white font-semibold py-2 px-6 rounded-xl shadow-lg transition">
+  Register Now
+</a>
+
+  <input type="hidden" name="_next" value="/thank-you.html">
+
+  <form action="https://formspree.io/f/yourFormID" method="POST" class="space-y-6">
+  <input type="hidden" name="_next" value="/thank-you.html" />
+  
+  <!-- other inputs -->
+  <input type="text" name="name" required />
+  <input type="email" name="email" required />
+  <!-- etc. -->
+
+  <button type="submit">Submit Registration</button>
+</form>
+
   <!-- Upcoming Webinars -->
   <section id="upcoming" class="max-w-5xl mx-auto px-6 py-20 bg-[var(--light-yellow)] rounded-xl shadow-lg">
     <h2 class="text-4xl font-bold mb-12 text-center">Upcoming Webinars</h2>
