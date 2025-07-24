@@ -21,7 +21,7 @@
 </head>
 <body class="antialiased">
 
-  <!-- Navigation Bar (simplified, adapt to your main nav) -->
+  <!-- Navigation Bar -->
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
       <a href="index.html" class="text-xl font-bold text-purple-700">InnerSpark Studio</a>
@@ -47,24 +47,10 @@
     <a href="#upcoming" class="bg-[var(--light-yellow)] text-gray-900 px-8 py-3 rounded-full text-lg font-semibold hover:bg-yellow-300 transition">
       See Upcoming Webinars
     </a>
+    <a href="/webinar-registration.html" class="mt-6 inline-block bg-purple-700 hover:bg-purple-800 text-white px-6 py-3 rounded-full text-lg font-semibold transition">
+      Register for a Webinar
+    </a>
   </section>
-
-  <a href="/webinar-registration.html" class="bg-purple-700 hover:bg-purple-800 text-white font-semibold py-2 px-6 rounded-xl shadow-lg transition">
-  Register Now
-</a>
-
-  <input type="hidden" name="_next" value="/thank-you.html">
-
-  <form action="https://formspree.io/f/yourFormID" method="POST" class="space-y-6">
-  <input type="hidden" name="_next" value="/thank-you.html" />
-  
-  <!-- other inputs -->
-  <input type="text" name="name" required />
-  <input type="email" name="email" required />
-  <!-- etc. -->
-
-  <button type="submit">Submit Registration</button>
-</form>
 
   <!-- Upcoming Webinars -->
   <section id="upcoming" class="max-w-5xl mx-auto px-6 py-20 bg-[var(--light-yellow)] rounded-xl shadow-lg">
@@ -76,7 +62,7 @@
         <h3 class="text-2xl font-semibold mb-2">The Science of Early Literacy</h3>
         <p class="mb-4">Discover how neuroscience informs effective reading instruction for young learners.</p>
         <p class="text-sm text-gray-600">Date: August 15, 2025 | Time: 5:00 PM GMT</p>
-        <a href="#" class="inline-block mt-4 bg-purple-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-purple-700 transition">
+        <a href="/webinar-registration.html" class="inline-block mt-4 bg-purple-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-purple-700 transition">
           Register Now
         </a>
       </article>
@@ -85,12 +71,10 @@
         <h3 class="text-2xl font-semibold mb-2">Creative Storytelling for Literacy</h3>
         <p class="mb-4">Learn techniques to engage children’s imagination and boost literacy skills through storytelling.</p>
         <p class="text-sm text-gray-600">Date: September 10, 2025 | Time: 4:00 PM GMT</p>
-        <a href="#" class="inline-block mt-4 bg-purple-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-purple-700 transition">
+        <a href="/webinar-registration.html" class="inline-block mt-4 bg-purple-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-purple-700 transition">
           Register Now
         </a>
       </article>
-
-      <!-- Add more webinar items here -->
 
     </div>
   </section>
