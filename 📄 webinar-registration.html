@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Webinar Registration | InnerSpark Studio</title>
-  <link href="/styles/tailwind.css" rel="stylesheet" /> <!-- Update path if needed -->
+  <link href="styles/tailwind.css" rel="stylesheet" /> <!-- ✅ No ../ needed -->
 </head>
 <body class="bg-purple-50 text-gray-800">
 
@@ -29,7 +29,10 @@
           <label class="block mb-2 font-medium">Message</label>
           <textarea name="message" rows="4" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-purple-500"></textarea>
         </div>
-        <input type="hidden" name="_next" value="/thank-you.html" />
+
+        <!-- ✅ thank-you.html is in same folder -->
+        <input type="hidden" name="_next" value="thank-you.html" />
+
         <button type="submit" class="w-full bg-purple-700 text-white font-bold py-3 rounded-lg hover:bg-purple-800 transition">
           Submit Registration
         </button>
