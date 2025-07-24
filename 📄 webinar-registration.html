@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Webinar Registration | InnerSpark Studio</title>
+  <link href="/styles/tailwind.css" rel="stylesheet" /> <!-- Update path if needed -->
+</head>
+<body class="bg-purple-50 text-gray-800">
+
+  <section class="min-h-screen flex items-center justify-center py-16 px-6">
+    <div class="bg-white p-10 rounded-3xl shadow-xl max-w-2xl w-full">
+      <h1 class="text-3xl font-bold text-center text-purple-800 mb-6">Register for Our Webinar</h1>
+
+      <form action="https://formspree.io/f/yourFormID" method="POST" class="space-y-6">
+        <div>
+          <label class="block mb-2 font-medium">Full Name</label>
+          <input type="text" name="name" required class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-purple-500" />
+        </div>
+        <div>
+          <label class="block mb-2 font-medium">Email Address</label>
+          <input type="email" name="email" required class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-purple-500" />
+        </div>
+        <div>
+          <label class="block mb-2 font-medium">School / Organization</label>
+          <input type="text" name="organization" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-purple-500" />
+        </div>
+        <div>
+          <label class="block mb-2 font-medium">Message</label>
+          <textarea name="message" rows="4" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-purple-500"></textarea>
+        </div>
+        <input type="hidden" name="_next" value="/thank-you.html" />
+        <button type="submit" class="w-full bg-purple-700 text-white font-bold py-3 rounded-lg hover:bg-purple-800 transition">
+          Submit Registration
+        </button>
+      </form>
+    </div>
+  </section>
+
+</body>
+</html>
